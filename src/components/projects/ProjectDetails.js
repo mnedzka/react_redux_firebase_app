@@ -1,7 +1,7 @@
 import React from "react";
 
 const ProjectDetails = props => {
-  const id = rops.match.params.id;
+  const id = props.match.params.id;
   return (
     <div className="container setcion project-details">
       <div className="card z-depth-zero">
