@@ -1,28 +1,38 @@
-.App {
-  text-align: center;
+html{
+  min-height: 100%;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: url(/img/mario-bg.png) no-repeat;
+  background-size: 100%;
+  background-position: bottom;
+  background-color: #95e8f3;
+  min-height: 100%;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
+form{
   padding: 20px;
-  color: white;
+  margin-top: 60px;
 }
 
-.App-title {
-  font-size: 1.5em;
+form button, form h5{
+  margin: 20px 0;
 }
 
-.App-intro {
-  font-size: large;
+input[type=text]:not(.browser-default):focus:not([readonly]),
+input[type=email]:not(.browser-default):focus:not([readonly]),
+input[type=password]:not(.browser-default):focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]){
+  border-color: #ec407a;
+  box-shadow: none;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+input[type=text]:not(.browser-default):focus:not([readonly]) + label,
+textarea.materialize-textarea:focus:not([readonly]) + label,
+input[type=email]:not(.browser-default):focus:not([readonly]) + label,
+input[type=password]:not(.browser-default):focus:not([readonly]) + label{
+  color: #ec407a !important;
 }
