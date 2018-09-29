@@ -5,8 +5,8 @@ const ProjectList = ({ projects }) => {
   return (
     <div className="project-list section">
       {projects &&
-        projects.map(projects => {
-          <ProjectSummary projects={project} key={project.id} />;
+        projects.map(project => {
+          return <ProjectSummary project={project} key={project.id} />;
         })}
     </div>
   );
