@@ -1,4 +1,5 @@
 import React from "react";
+import moment from "moment";
 
 const ProjectSummary = ({ project }) => {
   return (
@@ -8,7 +9,7 @@ const ProjectSummary = ({ project }) => {
         <p>
           Posted by the {project.authorFirstName} {project.authorLastName}
         </p>
-        <p className="grey-text">dynamic data</p>
+        <p className="grey-text">{project.createdAt.toDate().toString()}</p>
       </div>
     </div>
   );
