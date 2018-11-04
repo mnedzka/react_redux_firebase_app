@@ -4,7 +4,7 @@ export const signIn = credentials => {
 
     firebase
       .auth()
-      .signInWithEmailAndPassword(credentials.email, credentials.passoword)
+      .signInWithEmailAndPassword(credentials.email, credentials.password)
       .then(() => {
         dispatch({ type: "LOGIN_SUCCESS" });
       })
@@ -22,7 +22,7 @@ export const signOut = () => {
       .auth()
       .signOut()
       .then(() => {
-        dispatch({ type: "SIGNUP_SUCCESS" });
+        dispatch({ type: "SIGNOUT_SUCCESS" });
       });
   };
 };
