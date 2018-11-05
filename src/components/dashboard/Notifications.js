@@ -7,16 +7,16 @@ const Notifications = props => {
     <div className="section">
       <div className="card z-depth-0">
         <div className="card-content">
-          <div className="card-title">Notifications</div>
-          <ul className="notification">
+          <span className="card-title">Notifications</span>
+          <ul className="online-users">
             {notifications &&
               notifications.map(item => {
                 return (
                   <li key={item.id}>
-                    <span className="pink-text">{item.user}</span>
+                    <span className="pink-text">{item.user} </span>
                     <span>{item.content}</span>
-                    <div className="grey-text note-date">
-                      {moment(item.time.toDate()).fromNow}
+                    <div className="note-date grey-text">
+                      {moment(item.time.toDate()).fromNow()}
                     </div>
                   </li>
                 );

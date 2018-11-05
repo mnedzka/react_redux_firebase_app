@@ -8,7 +8,6 @@ class CreateProject extends Component {
     title: "",
     content: ""
   };
-
   handleChange = e => {
     this.setState({
       [e.target.id]: e.target.value
@@ -16,34 +15,31 @@ class CreateProject extends Component {
   };
   handleSubmit = e => {
     e.preventDefault();
+    // console.log(this.state);
     this.props.createProject(this.state);
     this.props.history.push("/");
   };
   render() {
     const { auth } = this.props;
-    if (!auth.uid) return <Redirect to="signin" />;
-
+    if (!auth.uid) return <Redirect to="/signin" />;
     return (
       <div className="container">
-        <form onSubmit={this.handleSubmit} className="white">
-          <h3 className="grey-text text-darken-3">Create new Project</h3>
+        <form className="white" onSubmit={this.handleSubmit}>
+          <h5 className="grey-text text-darken-3">Create a New Project</h5>
           <div className="input-field">
-            <label htmlFor="title">title</label>
             <input type="text" id="title" onChange={this.handleChange} />
+            <label htmlFor="title">Project Title</label>
           </div>
-
           <div className="input-field">
-            <label htmlFor="content">Content</label>
             <textarea
-              name=""
               id="content"
               className="materialize-textarea"
               onChange={this.handleChange}
             />
+            <label htmlFor="content">Project Content</label>
           </div>
-
           <div className="input-field">
-            <button className="btn pink lighten-1 z-depth-0">Create</button>
+            <button className="btn pink lighten-1">Create</button>
           </div>
         </form>
       </div>
